@@ -16,21 +16,23 @@ while turns > 0:
     for char in random_word:
 
         if char in guesses:
-            print(char)
+            print(char, end=" ")
         else:
-            print("_")
+            print("_", end=" ")
             fail += 1
-        if fail == 0:
-            print("Correct")
-            print("The word is", random_word)
-            break
-        guess = input("Guess a letter:")
 
-        guesses += guess
+    if fail == 0:
+        print("\nCorrect")
+        print("The word is", random_word)
+        break
+    
+    guess = input("Guess a letter:")
 
-        if guess not in random_word:
-            turns -= 1
-            print("Incorrect")
+    guesses += guess
 
-            if turns == 0:
-                print("you lost")
+    if guess not in random_word:
+        turns -= 1
+        print("Incorrect")
+
+        if turns == 0:
+            print("you lost")
